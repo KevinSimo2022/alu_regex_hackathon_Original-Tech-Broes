@@ -9,7 +9,7 @@ and "Episode Title" is any string of characters'''
 
 # Episode titles of movies are listed including their season number and episode number
 episode_titles = ['Money Heist S13E03', 'Money Heist S11E13', 'Money Heist S06E10', 'Money Heist S10E05']
-regex_episode = r"(\w+)\sS(\d{2})E(\d{2})"
+regex_episode = r"(.+)\sS(\d{2})E(\d{2})"
 
 for episode_title in episode_titles:
     episode_info = re.findall(regex_episode, episode_title)
