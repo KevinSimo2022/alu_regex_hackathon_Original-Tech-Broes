@@ -18,4 +18,4 @@ for episode_title in episode_titles:
         show_name = match.group(1)
         season_number = match.group(2)
         episode_number = match.group(3)
-        print(f"Show: {show_name}, Season: {season_number}, Episode: {episode_number})
+        print(f"Show: {show_name}, Season: {season_number}, Episode: {episode_number}")
