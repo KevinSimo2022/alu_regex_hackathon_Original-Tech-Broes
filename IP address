@@ -1,0 +1,28 @@
+import re
+
+"""
+The IP addresses should match the pattern "xxx.xxx.xxx.xxx", 
+where x is a digit between 0 and 255.
+"""
+
+# Each octet can be a number from 0 to 255
+octet_pattern = r"(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+
+# IP address should consist of four octets separated by dots
+ip_address_pattern = re.compile(f"^{octet_pattern}\.[{octet_pattern}]\.[{octet_pattern}]\.[{octet_pattern}]$")
+
+ip_addresses = [
+    "192.168.0.1",
+    "10.0.0.256",
+    "255.255.255.0",
+    "172.16.0.100",
+    "300.200.100.50",
+    "8.8.8.8",
+    "127.0.0.1",
+]
+
+for address in ip_addresses:
+    if ip_address_pattern.search(address):
+        print(address, "matches pattern")
+    else:
+        print(address, "does not match pattern")
